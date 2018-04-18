@@ -19,17 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-3L-eEd">
-                                <rect key="frame" x="88" y="233" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <state key="normal" image="microphone"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMz-Ok-DbT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2W-gG-8FW">
-                                <rect key="frame" x="134" y="505" width="106" height="30"/>
-                                <state key="normal" title="Stop Recording"/>
-                                <connections>
-                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEi-DG-NXb"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EMH-1Y-k9D">
@@ -37,11 +30,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-EX-T6q">
-                                <rect key="frame" x="134" y="468" width="106.5" height="21"/>
+                                <rect key="frame" x="134" y="450" width="106.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2W-gG-8FW">
+                                <rect key="frame" x="155" y="479" width="64" height="64"/>
+                                <state key="normal" image="stopButton"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEi-DG-NXb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -49,13 +49,15 @@
                             <constraint firstItem="Vtb-3L-eEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NT4-Kn-Bdp"/>
                             <constraint firstItem="T2W-gG-8FW" firstAttribute="centerX" secondItem="8FR-EX-T6q" secondAttribute="centerX" id="Xya-6u-sdm"/>
                             <constraint firstItem="8FR-EX-T6q" firstAttribute="centerX" secondItem="Vtb-3L-eEd" secondAttribute="centerX" id="Ymg-aI-872"/>
-                            <constraint firstItem="T2W-gG-8FW" firstAttribute="top" secondItem="8FR-EX-T6q" secondAttribute="bottom" constant="16" id="d99-zd-cwp"/>
-                            <constraint firstItem="8FR-EX-T6q" firstAttribute="top" secondItem="Vtb-3L-eEd" secondAttribute="bottom" constant="35" id="zhx-Yg-vuD"/>
+                            <constraint firstItem="T2W-gG-8FW" firstAttribute="top" secondItem="8FR-EX-T6q" secondAttribute="bottom" constant="8" id="d99-zd-cwp"/>
+                            <constraint firstItem="8FR-EX-T6q" firstAttribute="top" secondItem="Vtb-3L-eEd" secondAttribute="bottom" constant="16.5" id="zhx-Yg-vuD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="recordButton" destination="Vtb-3L-eEd" id="QBp-g1-PWC"/>
                         <outlet property="recordingLabel" destination="8FR-EX-T6q" id="vVy-Wv-UFf"/>
+                        <outlet property="stopRecordingButton" destination="T2W-gG-8FW" id="VUL-9s-Ma5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,5 +67,6 @@
     </scenes>
     <resources>
         <image name="microphone" width="200" height="200"/>
+        <image name="stopButton" width="64" height="64"/>
     </resources>
 </document>
