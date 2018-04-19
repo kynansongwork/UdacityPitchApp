@@ -31,7 +31,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     
     enum PlayingState { case playing, notPlaying }
     
-    // MARK: Audio Functions
+    // MARK: Audio Functions, passed in from the recordSounds view controller.
     
     func setupAudio() {
         // initialize (recording) audio file
@@ -43,6 +43,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     }
     
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {
+        //optional parameters, think if statement.
         
         // initialize audio engine components
         audioEngine = AVAudioEngine()
@@ -55,7 +56,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         let changeRatePitchNode = AVAudioUnitTimePitch()
         if let pitch = pitch {
             changeRatePitchNode.pitch = pitch
-        }
+        } //if not nil, execute. Or skip over.
         if let rate = rate {
             changeRatePitchNode.rate = rate
         }
@@ -132,7 +133,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         }
     }
     
-    // MARK: Connect List of Audio Nodes
+    // MARK: Connect List of Audio Nodes, helper function.
     
     func connectAudioNodes(_ nodes: AVAudioNode...) {
         for x in 0..<nodes.count-1 {
@@ -140,7 +141,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         }
     }
     
-    // MARK: UI Functions
+    // MARK: UI Functions, helper function to avoid duplication of code.
 
     func configureUI(_ playState: PlayingState) {
         switch(playState) {
