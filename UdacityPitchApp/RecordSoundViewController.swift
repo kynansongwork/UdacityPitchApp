@@ -16,6 +16,11 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
+    @IBOutlet weak var recordingTimer: UILabel!
+    
+    var counter = 0.0
+    var timer = Timer()
+    var isCounting = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +32,33 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.isEnabled = false
     }
     
+    
     func configureUI(recordingState: Bool) {
         if recordingState == true {
             recordingLabel.text = "Recording in Progress"
             stopRecordingButton.isEnabled = true
             recordButton.isEnabled = false
+            
+            counter = 0.0
+            recordingTimer.text = String(counter)
+            //Resets counter when pressed.
+            //Need to fix UI for counter.
+        
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            isCounting = true
+            
         } else {
             recordingLabel.text = "Press to Record"
             stopRecordingButton.isEnabled = false
             recordButton.isEnabled = true
+            timer.invalidate()
+            isCounting = false
         }
-        
+    }
+    
+    @objc func updateTimer() {
+        counter = counter + 0.1
+        recordingTimer.text = String(format: "%.1f", counter)
     }
     
 
