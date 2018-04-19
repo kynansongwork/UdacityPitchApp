@@ -12,6 +12,7 @@
 		ED1953DC20860A830006F752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1953DA20860A830006F752 /* Main.storyboard */; };
 		ED1953DE20860A860006F752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1953DD20860A860006F752 /* Assets.xcassets */; };
 		ED1953E120860A860006F752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1953DF20860A860006F752 /* LaunchScreen.storyboard */; };
+		ED1953E92088BE7B0006F752 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1953E82088BE7A0006F752 /* PlaySoundsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		ED1953DD20860A860006F752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1953E020860A860006F752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1953E220860A860006F752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED1953E82088BE7A0006F752 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				ED1953DD20860A860006F752 /* Assets.xcassets */,
 				ED1953DF20860A860006F752 /* LaunchScreen.storyboard */,
 				ED1953E220860A860006F752 /* Info.plist */,
+				ED1953E82088BE7A0006F752 /* PlaySoundsViewController.swift */,
 			);
 			path = UdacityPitchApp;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1953E92088BE7B0006F752 /* PlaySoundsViewController.swift in Sources */,
 				ED1953D920860A830006F752 /* RecordSoundViewController.swift in Sources */,
 				ED1953D720860A830006F752 /* AppDelegate.swift in Sources */,
 			);
