@@ -56,7 +56,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Svs-dM-H8f"/>
                     <connections>
-                        <outlet property="recordButton" destination="Vtb-3L-eEd" id="QBp-g1-PWC"/>
+                        <outlet property="recordButton" destination="Vtb-3L-eEd" id="szB-aa-cTU"/>
                         <outlet property="recordingLabel" destination="8FR-EX-T6q" id="vVy-Wv-UFf"/>
                         <outlet property="stopRecordingButton" destination="T2W-gG-8FW" id="VUL-9s-Ma5"/>
                         <segue destination="xlo-rf-gPu" kind="show" identifier="recordingFinished" id="Mdr-hM-Hgu"/>
