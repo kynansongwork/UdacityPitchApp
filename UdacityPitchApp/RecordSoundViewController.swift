@@ -59,6 +59,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     @objc func updateTimer() {
         counter = counter + 0.1
         recordingTimer.text = String(format: "%.1f", counter)
+        //Learnt from https://www.ioscreator.com/tutorials/stopwatch-tutorial
     }
     
 

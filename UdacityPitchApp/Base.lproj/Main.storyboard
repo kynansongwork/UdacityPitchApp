@@ -30,20 +30,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-EX-T6q">
-                                <rect key="frame" x="154" y="484.66666666666669" width="106" height="21"/>
+                                <rect key="frame" x="154" y="484.33333333333331" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2W-gG-8FW">
-                                <rect key="frame" x="175" y="513.66666666666663" width="64" height="64"/>
+                                <rect key="frame" x="175" y="513.33333333333337" width="64" height="64"/>
                                 <state key="normal" image="stopButton"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEi-DG-NXb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-Cf-haQ" userLabel="CounterLabel">
-                                <rect key="frame" x="152.66666666666666" y="203.66666666666666" width="108.99999999999997" height="56.333333333333343"/>
+                                <rect key="frame" x="152.66666666666666" y="203.33333333333334" width="108.99999999999997" height="56.666666666666657"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="47"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
