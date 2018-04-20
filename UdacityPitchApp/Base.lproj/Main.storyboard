@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-3L-eEd">
-                                <rect key="frame" x="107" y="140" width="200" height="456"/>
+                                <rect key="frame" x="107" y="268" width="200" height="200"/>
                                 <state key="normal" image="microphone"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMz-Ok-DbT"/>
@@ -29,21 +29,21 @@
                                 <rect key="frame" x="134" y="362" width="106.5" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-EX-T6q">
-                                <rect key="frame" x="153.66666666666666" y="612.66666666666663" width="106.33333333333334" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-EX-T6q">
+                                <rect key="frame" x="154" y="484.66666666666669" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2W-gG-8FW">
-                                <rect key="frame" x="174.66666666666666" y="641.66666666666663" width="64" height="64"/>
+                                <rect key="frame" x="175" y="513.66666666666663" width="64" height="64"/>
                                 <state key="normal" image="stopButton"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEi-DG-NXb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-Cf-haQ" userLabel="CounterLabel">
-                                <rect key="frame" x="124" y="75" width="164" height="56.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-Cf-haQ" userLabel="CounterLabel">
+                                <rect key="frame" x="152.66666666666666" y="203.66666666666666" width="108.99999999999997" height="56.333333333333343"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="47"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -52,14 +52,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vtb-3L-eEd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Knr-HG-hIx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jkt-Cf-haQ" secondAttribute="trailing" constant="126" id="NRO-j9-8vU"/>
                             <constraint firstItem="Vtb-3L-eEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NT4-Kn-Bdp"/>
+                            <constraint firstItem="Vtb-3L-eEd" firstAttribute="top" secondItem="jkt-Cf-haQ" secondAttribute="bottom" constant="8" id="Qp5-fS-qKT"/>
+                            <constraint firstItem="jkt-Cf-haQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152.5" id="WD0-Dg-xmt"/>
                             <constraint firstItem="T2W-gG-8FW" firstAttribute="centerX" secondItem="8FR-EX-T6q" secondAttribute="centerX" id="Xya-6u-sdm"/>
                             <constraint firstItem="8FR-EX-T6q" firstAttribute="centerX" secondItem="Vtb-3L-eEd" secondAttribute="centerX" id="Ymg-aI-872"/>
                             <constraint firstItem="T2W-gG-8FW" firstAttribute="top" secondItem="8FR-EX-T6q" secondAttribute="bottom" constant="8" id="d99-zd-cwp"/>
-                            <constraint firstItem="jkt-Cf-haQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="iUp-mU-n8K"/>
-                            <constraint firstItem="Vtb-3L-eEd" firstAttribute="top" secondItem="jkt-Cf-haQ" secondAttribute="bottom" constant="8.5" id="ldi-bY-q0D"/>
-                            <constraint firstItem="jkt-Cf-haQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="vc5-L4-IWM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jkt-Cf-haQ" secondAttribute="trailing" constant="152.5" id="hkj-BQ-1z0"/>
+                            <constraint firstItem="jkt-Cf-haQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oOY-e5-QHV"/>
                             <constraint firstItem="8FR-EX-T6q" firstAttribute="top" secondItem="Vtb-3L-eEd" secondAttribute="bottom" constant="16.5" id="zhx-Yg-vuD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
