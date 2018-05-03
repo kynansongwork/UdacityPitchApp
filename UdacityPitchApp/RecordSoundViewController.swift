@@ -22,11 +22,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     var timer = Timer()
     var isCounting = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         stopRecordingButton.isEnabled = false
@@ -34,26 +29,25 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     func configureUI(recordingState: Bool) {
-        if recordingState == true {
-            recordingLabel.text = "Recording in Progress"
-            stopRecordingButton.isEnabled = true
-            recordButton.isEnabled = false
+            recordingLabel.text = recordingState ? "Recording in Progress" : "Press to Record"
+            //using conditional operator as suggested.
+            
+            stopRecordingButton.isEnabled = recordingState
+            recordButton.isEnabled = !recordingState
+            //Refactoring as suggested.
             
             counter = 0.0
             recordingTimer.text = String(counter)
             //Resets counter when pressed.
-            //Need to fix UI for counter.
         
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-            isCounting = true
-            
-        } else {
-            recordingLabel.text = "Press to Record"
-            stopRecordingButton.isEnabled = false
-            recordButton.isEnabled = true
-            timer.invalidate()
-            isCounting = false
-        }
+            if recordingState == true {
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+                isCounting = true
+            } else {
+                timer.invalidate()
+                isCounting = false
+            }
+
     }
     
     @objc func updateTimer() {

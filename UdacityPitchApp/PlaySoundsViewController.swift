@@ -57,8 +57,12 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio() //from the extension
-
-        // Do any additional setup after loading the view.
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.imageView?.contentMode = .scaleAspectFit
+//        stopButton.imageView?.contentMode = .scaleAspectFit
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,10 +70,6 @@ class PlaySoundsViewController: UIViewController {
         configureUI(.notPlaying)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
