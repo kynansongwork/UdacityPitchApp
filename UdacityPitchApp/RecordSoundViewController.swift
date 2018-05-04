@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
-
+    
     var audioRecorder: AVAudioRecorder!
     
     @IBOutlet weak var recordingLabel: UILabel!
@@ -29,25 +29,25 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     func configureUI(recordingState: Bool) {
-            recordingLabel.text = recordingState ? "Recording in Progress" : "Press to Record"
-            //using conditional operator as suggested.
-            
-            stopRecordingButton.isEnabled = recordingState
-            recordButton.isEnabled = !recordingState
-            //Refactoring as suggested.
-            
-            counter = 0.0
-            recordingTimer.text = String(counter)
-            //Resets counter when pressed.
+        recordingLabel.text = recordingState ? "Recording in Progress" : "Press to Record"
+        //using conditional operator as suggested.
         
-            if recordingState == true {
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-                isCounting = true
-            } else {
-                timer.invalidate()
-                isCounting = false
-            }
-
+        stopRecordingButton.isEnabled = recordingState
+        recordButton.isEnabled = !recordingState
+        //Refactoring as suggested.
+        
+        counter = 0.0
+        recordingTimer.text = String(counter)
+        //Resets counter when pressed.
+        
+        if recordingState == true {
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            isCounting = true
+        } else {
+            timer.invalidate()
+            isCounting = false
+        }
+        
     }
     
     @objc func updateTimer() {
@@ -56,10 +56,10 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         //Learnt from https://www.ioscreator.com/tutorials/stopwatch-tutorial
     }
     
-
-
+    
+    
     @IBAction func recordAudio(_ sender: Any) {
-
+        
         configureUI(recordingState: true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -79,7 +79,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func stopRecording(_ sender: Any) {
-
+        
         configureUI(recordingState: false)
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -88,11 +88,11 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-        performSegue(withIdentifier: "recordingFinished", sender: audioRecorder.url)
+            performSegue(withIdentifier: "recordingFinished", sender: audioRecorder.url)
         } else {
             print("recording failed")
         }
-            
+        
         //called as this view controller is its delegate.
     }
     

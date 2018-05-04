@@ -27,8 +27,6 @@ class PlaySoundsViewController: UIViewController {
     
     enum ButtonType: Int { case slow = 0, fast, chipmunk, vader, echo, reverb}
     
-    
-    
     @IBAction func playSoundForButton(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
@@ -62,7 +60,9 @@ class PlaySoundsViewController: UIViewController {
         rabbitButton.imageView?.contentMode = .scaleAspectFit
         vaderButton.imageView?.contentMode = .scaleAspectFit
         reverbButton.imageView?.contentMode = .scaleAspectFit
-//        stopButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        //Keeps the button ratio for different sized screens.
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
